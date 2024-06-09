@@ -74,7 +74,7 @@ namespace Students.Web.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            return View();
+            return View(lecturer);
         }
 
         // GET: LecturersController/Edit/5
