@@ -177,6 +177,9 @@
   <data name="IndexOfLectureHall" xml:space="preserve">
     <value>Index des Hörsaals</value>
   </data>
+  <data name="IndexOfLecturers" xml:space="preserve">
+    <value>Verzeichnis der Dozenten</value>
+  </data>
   <data name="IndexOfMajor" xml:space="preserve">
     <value>Index von Studienrichtung</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="LectureHall" xml:space="preserve">
     <value>Hörsaal</value>
+  </data>
+  <data name="Lecturer" xml:space="preserve">
+    <value>Dozent</value>
   </data>
   <data name="Major" xml:space="preserve">
     <value>Studienrichtung</value>

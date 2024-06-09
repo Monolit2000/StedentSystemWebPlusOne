@@ -177,6 +177,9 @@
   <data name="IndexOfLectureHall" xml:space="preserve">
     <value>講義室の索引</value>
   </data>
+  <data name="IndexOfLecturers" xml:space="preserve">
+    <value>講師一覧</value>
+  </data>
   <data name="IndexOfMajor" xml:space="preserve">
     <value>コース索引 学習内容</value>
   </data>
@@ -194,6 +197,9 @@
   </data>
   <data name="LectureHall" xml:space="preserve">
     <value>講義室</value>
+  </data>
+  <data name="Lecturer" xml:space="preserve">
+    <value>講師</value>
   </data>
   <data name="Major" xml:space="preserve">
     <value>専攻</value>

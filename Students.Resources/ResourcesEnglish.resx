@@ -177,6 +177,9 @@
   <data name="IndexOfLectureHall" xml:space="preserve">
     <value>Index of Lecture hall</value>
   </data>
+  <data name="IndexOfLecturers" xml:space="preserve">
+    <value>Index of lecturers</value>
+  </data>
   <data name="IndexOfMajor" xml:space="preserve">
     <value>Index of Major</value>
   </data>
