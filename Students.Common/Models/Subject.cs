@@ -9,8 +9,8 @@ public class Subject
 
     public int Id { get; set; }
 
-    [Required]
-    [CapitalLettersOnly]
+    //[Required]
+    [NoDigitsOrSpecialChars]
     public string Name { get; set; } = string.Empty;
 
     [Range(1, 10)]

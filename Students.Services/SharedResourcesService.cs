@@ -17,7 +17,6 @@ public class SharedResourcesService : ISharedResourcesService
 
     #region ISharedResourceService Implementation
 
-    /// <inheritdoc/>
     public string GetString(string resourceId)
     {
         var currentCultureInfo = Thread.CurrentThread.CurrentCulture;
@@ -26,7 +25,6 @@ public class SharedResourcesService : ISharedResourcesService
         return result;
     }
 
-    /// <inheritdoc/>
     public string GetString(string resourceId, CultureInfo cultureInfo)
     {
         string result = string.Empty;
@@ -80,7 +78,6 @@ public class SharedResourcesService : ISharedResourcesService
         return result;
     }
 
-    /// <inheritdoc/>
     public string this[string resourceId]
     {
         get
@@ -90,5 +87,5 @@ public class SharedResourcesService : ISharedResourcesService
         }
     }
 
-    #endregion // ISharedResourceService Implementation
+    #endregion 
 }

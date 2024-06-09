@@ -4,7 +4,6 @@ namespace Students.Interfaces;
 
 public interface IDatabaseService
 {
-
     #region Subject
 
     Task<List<Subject>> GetOllSubjectsAsync();

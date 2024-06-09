@@ -99,16 +99,10 @@ public class DatabaseService : IDatabaseService
         _context.Add(newSubject);
         await _context.SaveChangesAsync();
 
-
-
-        //_context.Add(subject);
-        //await _context.SaveChangesAsync();
     }
 
     public async Task UpdateSubjectAsync(Subject subjectModel, int[] subjectIdDst)
     {
-
-
 
         var subject = await GetSubjectAsync(subjectModel.Id);
 
@@ -116,22 +110,18 @@ public class DatabaseService : IDatabaseService
             return;
 
 
-        // Update the student's properties
         subject.Name = subjectModel.Name;
         subject.Credits = subjectModel.Credits;
 
-        // Get the chosen subjects
         var chosenStudents = _context.Student
             .Where(s => subjectIdDst.Contains(s.Id))
             .ToList();
 
-        // Remove the existing LectureHallSubjects entities for the student
         var StudentSubject = _context.StudentSubject
             .Where(ss => ss.SubjectId == subjectModel.Id)
             .ToList();
         _context.StudentSubject.RemoveRange(StudentSubject);
 
-        // Add new StudentSubject entities for the chosen subjects
         foreach (var student in chosenStudents)
         {
             var studentSubject = new StudentSubject
@@ -142,10 +132,7 @@ public class DatabaseService : IDatabaseService
             _context.StudentSubject.Add(studentSubject);
         }
 
-        // Save changes to the database
         var resultInt = _context.SaveChanges();
-
-
     }
 
     public async Task DeleteSubjectAsync(int id)
@@ -248,7 +235,7 @@ public class DatabaseService : IDatabaseService
 
 
 
-    #endregion // Research Worker
+    #endregion 
 
 
     #region Major
@@ -382,22 +369,18 @@ public class DatabaseService : IDatabaseService
             return;
 
 
-        // Update the student's properties
         major.Name = majorModel.Name;
        
 
-        // Get the chosen subjects
         var chosenStudents = _context.Student
             .Where(s => studentIdDst.Contains(s.Id))
             .ToList();
 
-        // Remove the existing LectureHallSubjects entities for the student
         var majorStudent = _context.MajorStudent
             .Where(ss => ss.MajorId == majorModel.Id)
             .ToList();
         _context.MajorStudent.RemoveRange(majorStudent);
 
-        // Add new StudentSubject entities for the chosen subjects
         foreach (var student in chosenStudents)
         {
             var majorStudents = new MajorStudent
@@ -408,7 +391,6 @@ public class DatabaseService : IDatabaseService
             _context.MajorStudent.Add(majorStudents);
         }
 
-        // Save changes to the database
         var resultInt = _context.SaveChanges();
 
     }
@@ -513,27 +495,22 @@ public class DatabaseService : IDatabaseService
     {
         var result = false;
 
-        // Find the student
         var student = _context.Student.Find(id);
         if (student != null)
         {
-            // Update the student's properties
             student.Name = name;
             student.Age = age;
             student.Major = major;
 
-            // Get the chosen subjects
             var chosenSubjects = _context.Subject
                 .Where(s => subjectIdDst.Contains(s.Id))
                 .ToList();
 
-            // Remove the existing StudentSubject entities for the student
             var studentSubjects = _context.StudentSubject
                 .Where(ss => ss.StudentId == id)
                 .ToList();
             _context.StudentSubject.RemoveRange(studentSubjects);
 
-            // Add new StudentSubject entities for the chosen subjects
             foreach (var subject in chosenSubjects)
             {
                 var studentSubject = new StudentSubject
@@ -544,7 +521,6 @@ public class DatabaseService : IDatabaseService
                 _context.StudentSubject.Add(studentSubject);
             }
 
-            // Save changes to the database
             var resultInt = _context.SaveChanges();
             result = resultInt > 0;
         }
@@ -655,25 +631,20 @@ public class DatabaseService : IDatabaseService
         if (lecturer == null)
             return;
 
-
-        // Update the lecturer's properties
         lecturer.Name = lecturerModel.Name;
         lecturer.Age = lecturerModel.Age;
 
 
-        // Get the chosen subjects
         var chosenSubjects = _context.Subject
             .Where(s => subjectIdDst.Contains(s.Id))
             .ToList();
 
-        // Remove the existing LectureHallSubjects entities for the student
         var lecturerSubject = _context.LecturerSubject
             .Where(ss => ss.LecturerId == lecturerModel.Id)
             .ToList();
 
         _context.LecturerSubject.RemoveRange(lecturerSubject);
 
-        // Add new LecturerSubject entities for the chosen subjects
         foreach (var subject in chosenSubjects)
         {
             var researchAreaStudents = new LecturerSubject
@@ -684,7 +655,6 @@ public class DatabaseService : IDatabaseService
             _context.LecturerSubject.Add(researchAreaStudents);
         }
 
-        // Save changes to the database
         var resultInt = _context.SaveChanges();
     }
 

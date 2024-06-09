@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Students.Common.Attributes;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,8 @@ namespace Students.Common.Models
     {
         public int Id { get; set; }
 
+        //[Required]
+        //[NoDigitsOrSpecialChars]
         public string Name { get; set; } = string.Empty;
 
         public int Age { get; set; }
