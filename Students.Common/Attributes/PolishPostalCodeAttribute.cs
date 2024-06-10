@@ -16,13 +16,12 @@ namespace Students.Common.Attributes
                 string postalCode = value.ToString();
                 if (!IsValidPolishPostalCode(postalCode))
                 {
-                    return new ValidationResult("Почтовый индекс должен быть в формате XX-XXX.");
+                    return new ValidationResult("The postal code should be in the format XX-XXX.");
                 }
             }
             return ValidationResult.Success;
         }
 
-        // Method to check if the entered postal code corresponds to the Polish format
         private bool IsValidPolishPostalCode(string postalCode)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(postalCode, @"\b\d{2}-\d{3}\b");
