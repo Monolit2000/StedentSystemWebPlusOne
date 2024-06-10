@@ -115,6 +115,15 @@ namespace Students.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Książka.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на tworzenie aplikacji internetowych za pomocą ASP.NET Core.
         /// </summary>
         public static string building_Web_apps_with_ASP_NET_Core {
@@ -219,6 +228,15 @@ namespace Students.Resources {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Indeks książek.
+        /// </summary>
+        public static string IndexOfBook {
+            get {
+                return ResourceManager.GetString("IndexOfBook", resourceCulture);
             }
         }
         

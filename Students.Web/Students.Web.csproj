@@ -16,6 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Book\Create.cshtml" />
+    <None Include="Views\Book\Delete.cshtml" />
+    <None Include="Views\Book\Details.cshtml" />
+    <None Include="Views\Book\Edit.cshtml" />
+    <None Include="Views\Book\Index.cshtml" />
     <None Include="Views\Lecturers\Create.cshtml" />
     <None Include="Views\Lecturers\Delete.cshtml" />
     <None Include="Views\Lecturers\Details.cshtml" />

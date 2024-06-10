@@ -29,23 +29,6 @@ public interface IDatabaseService
 
     #endregion
 
-    #region ResearchWorker
-
-    Task<ResearchWorker?> GetResearchWorkerAsync(int? Id);
-
-    Task<IList<ResearchWorker>> GetOllResearchWorkerAsync();
-
-    Task CreateResearchWorkerAsync(ResearchWorker researchWorker);
-
-    Task UpdateResearchWorkerAsync(ResearchWorker researchWorker);
-
-    Task DeleteResearchWorkerAsync(int? id);
-
-    bool ResearchWorkerExists(int id);
-
-
-    #endregion
-
     #region Major
 
     Task<Major?> GetMajorAsync(int? Id);
@@ -63,6 +46,21 @@ public interface IDatabaseService
     bool MajorExists(int id);
 
 
+
+    #endregion
+
+    #region Book
+    Task<Book?> GetBookAsync(int? Id);
+
+    Task<IList<Book>> GetOllBookAsync();
+
+    Task CreateBookAsync(Book lectureHall);
+
+    Task UpdateBookAsync(Book lectureHall);
+
+    Task DeleteBookAsync(int id);
+
+    bool BookExists(int id);
 
     #endregion
 

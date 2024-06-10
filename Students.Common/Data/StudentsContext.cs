@@ -23,11 +23,11 @@ public class StudentsContext : DbContext
     public DbSet<Student> Student { get; set; } = default!;
     public DbSet<StudentSubject> StudentSubject { get; set; } = default!;
 
+    public DbSet<Book> Book { get; set; } = default!;
+
 
     public DbSet<Lecturer> Lecturer { get; set; }
     public DbSet<LecturerSubject> LecturerSubject { get; set; }
-
-    public DbSet<ResearchWorker> ResearchWorker { get; set; } = default!;  
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

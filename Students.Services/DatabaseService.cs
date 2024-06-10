@@ -185,59 +185,6 @@ public class DatabaseService : IDatabaseService
     #endregion
 
 
-    #region Research Worker
-
-    public async Task<ResearchWorker?> GetResearchWorkerAsync(int? Id)
-    {
-        var lectureHall = await _context.ResearchWorker
-           .FirstOrDefaultAsync(m => m.Id == Id);
-
-        return lectureHall;
-    }
-
-    public async Task<IList<ResearchWorker>> GetOllResearchWorkerAsync()
-    {
-        var lectureHalls = await _context.ResearchWorker.ToListAsync();
-
-        return lectureHalls;
-    }
-
-    public async Task CreateResearchWorkerAsync(ResearchWorker researchWorker)
-    {
-        _context.Add(researchWorker);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task UpdateResearchWorkerAsync(ResearchWorker researchWorker)
-    {
-        _context.Update(researchWorker);
-        await _context.SaveChangesAsync();
-    }
-
-    public async Task DeleteResearchWorkerAsync(int? id)
-    {
-        var researchWorker = await GetResearchWorkerAsync(id);
-
-        if (researchWorker == null)
-        {
-            return;
-        }
-
-        _context.ResearchWorker.Remove(researchWorker);
-
-        await _context.SaveChangesAsync();
-    }
-
-    public bool ResearchWorkerExists(int id)
-    {
-        return _context.ResearchWorker.Any(e => e.Id == id);
-    }
-
-
-
-    #endregion 
-
-
     #region Major
 
 
@@ -401,6 +348,57 @@ public class DatabaseService : IDatabaseService
     }
 
     #endregion
+
+
+    #region Book
+
+    public async Task<Book?> GetBookAsync(int? Id)
+    {
+        var book = await _context.Book
+          .FirstOrDefaultAsync(m => m.Id == Id);
+
+        return book;
+    }
+
+    public async Task<IList<Book>> GetOllBookAsync()
+    {
+        var lectureHalls = await _context.Book.ToListAsync();
+
+        return lectureHalls;
+    }
+
+    public async Task CreateBookAsync(Book book)
+    {
+        _context.Add(book);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateBookAsync(Book book)
+    {
+        _context.Update(book);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task DeleteBookAsync(int id)
+    {
+        var book = await GetBookAsync(id);
+
+        if (book == null)
+        {
+            return;
+        }
+
+        _context.Book.Remove(book);
+
+        await _context.SaveChangesAsync();
+    }
+
+    public bool BookExists(int id)
+    {
+        return _context.Book.Any(e => e.Id == id);
+    }
+
+    #endregion // Book
 
 
     #region Student

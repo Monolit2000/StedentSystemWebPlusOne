@@ -7,15 +7,23 @@ using System.Threading.Tasks;
 
 namespace Students.Common.Models
 {
-    public class ResearchWorker
+    public class Book
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
 
-        [Required]
-        [StringLength(100)]
         public string Name { get; set; } = string.Empty;
 
-        [Range(1, 100)]
-        public int Age { get; set; }
+        public string Author { get; set; } = string.Empty;
+
+        public Book()
+        {
+
+        }
+
+        public Book(string name)
+        {
+            Name = name;    
+        }
+
     }
 }

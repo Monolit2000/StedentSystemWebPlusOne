@@ -38,21 +38,27 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">@sharedResourcesService.GetString("Data", cultureInfo)</a>
                             <ul class="dropdown-menu">
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">@sharedResourcesService.GetString("Students", cultureInfo)</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="Index">@sharedResourcesService.GetString("Subjects", cultureInfo)</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Major" asp-action="Index">@sharedResourcesService.GetString("Major", cultureInfo)</a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="ResearchWorker" asp-action="Index">@sharedResourcesService.GetString("ResearchWorker", cultureInfo)</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">@sharedResourcesService.GetString("Book", cultureInfo)</a>
                                 </li>
+                             
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Lecturers" asp-action="Index">@sharedResourcesService.GetString("Lecturer", cultureInfo)</a>
                                 </li>
+
                             </ul>
                         </li>
                         <li class="nav-item">

@@ -1,4 +1,4 @@
-﻿@model Students.Common.Models.ResearchWorker
+﻿@model Students.Common.Models.Book
 @using Students.Interfaces
 @using System.Globalization
 
@@ -6,13 +6,15 @@
 
 @{
     CultureInfo cultureInfo = CultureInfo.GetCultureInfo(Context.Session.GetString("Culture") ?? "en-US");
+
     ViewData["Title"] = "Delete";
 }
-<h1>@sharedResourcesService.GetString("Delete", cultureInfo)</h1>
 
-<h3>@sharedResourcesService.GetString("Are you sure you want to delete this?", cultureInfo)</h3>
+<h1> @sharedResourcesService.GetString("Delete", cultureInfo)</h1>
+
+<h3> @sharedResourcesService.GetString("Are you sure you want to delete this?", cultureInfo)</h3>
 <div>
-    <h4>@sharedResourcesService.GetString("ResearchWorker", cultureInfo)</h4>
+    <h4>@sharedResourcesService.GetString("Book", cultureInfo)</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -22,10 +24,10 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class="col-sm-2">
-            @sharedResourcesService.GetString("Age", cultureInfo)
+            @sharedResourcesService.GetString("Author", cultureInfo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Age)
+            @Html.DisplayFor(model => model.Author)
         </dd>
     </dl>
 

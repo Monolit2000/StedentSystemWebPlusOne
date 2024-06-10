@@ -1,4 +1,5 @@
-﻿@model Students.Common.Models.ResearchWorker
+﻿@model Students.Common.Models.Book
+
 @using Students.Interfaces
 @using System.Globalization
 
@@ -6,12 +7,14 @@
 
 @{
     CultureInfo cultureInfo = CultureInfo.GetCultureInfo(Context.Session.GetString("Culture") ?? "en-US");
+
     ViewData["Title"] = "Create";
 }
 
 <h1>@sharedResourcesService.GetString("Create", cultureInfo)</h1>
 
-<h4>@sharedResourcesService.GetString("ResearchWorker", cultureInfo)</h4>
+<h4>@sharedResourcesService.GetString("Book", cultureInfo)</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,9 +26,9 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Age" class="control-label">@sharedResourcesService.GetString("Age", cultureInfo)</label>
-                <input asp-for="Age" class="form-control" />
-                <span asp-validation-for="Age" class="text-danger"></span>
+                <label asp-for="Author" class="control-label">@sharedResourcesService.GetString("Author", cultureInfo)</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="@sharedResourcesService.GetString("Create", cultureInfo)" class="btn btn-primary" />
@@ -39,7 +42,5 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

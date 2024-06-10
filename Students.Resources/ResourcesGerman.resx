@@ -135,6 +135,9 @@
   <data name="BackToList" xml:space="preserve">
     <value>Zurück zur Liste</value>
   </data>
+  <data name="Book" xml:space="preserve">
+    <value>Buch</value>
+  </data>
   <data name="building Web apps with ASP.NET Core" xml:space="preserve">
     <value>Erstellung von Webanwendungen mit ASP.NET Core</value>
   </data>
@@ -173,6 +176,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="IndexOfBook" xml:space="preserve">
+    <value>Index des Buches</value>
   </data>
   <data name="IndexOfLectureHall" xml:space="preserve">
     <value>Index des Hörsaals</value>
