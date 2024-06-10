@@ -9,7 +9,7 @@ public class Subject
     public int Id { get; set; }
 
     [Required]
-    [NoDigitsOrSpecialChars]
+    [ValidSubjectName]
     public string Name { get; set; } = string.Empty;
 
     [Range(1, 10)]
